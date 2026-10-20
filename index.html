@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Apna Sarkari Update — सरकारी नौकरी, रिजल्ट, एडमिट कार्ड, ऑनलाइन फॉर्म और योजनाओं की जानकारी।">
+  <title>Apna Sarkari Update | सरकारी अपडेट</title>
+  <style>
+    :root { --navy:#12345a; --blue:#1769aa; --light:#f2f6fb; --green:#16834a; --orange:#f59e0b; --ink:#172b4d; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:Arial,"Noto Sans Devanagari",sans-serif; background:var(--light); color:var(--ink); }
+    header { background:var(--navy); color:white; padding:20px 16px; text-align:center; }
+    header h1 { margin:0 0 7px; font-size:clamp(24px,5vw,36px); }
+    header p { margin:0; opacity:.9; }
+    .notice { background:#fff3cd; color:#694f00; padding:10px 14px; text-align:center; font-size:14px; }
+    nav { display:flex; flex-wrap:wrap; justify-content:center; gap:8px; background:#0c2542; padding:10px; }
+    nav a { color:#fff; text-decoration:none; padding:8px 10px; border-radius:6px; font-size:14px; }
+    nav a:hover { background:#244b72; }
+    .wrap { max-width:1100px; margin:auto; padding:18px 14px; }
+    .search { display:flex; gap:8px; margin-bottom:18px; }
+    .search input { flex:1; min-width:0; padding:13px; border:1px solid #ccd5e0; border-radius:8px; font-size:16px; }
+    .search button,.btn { border:0; border-radius:8px; padding:12px 16px; background:var(--blue); color:#fff; font-weight:bold; cursor:pointer; text-decoration:none; display:inline-block; }
+    .hero { background:white; border-radius:12px; padding:20px; box-shadow:0 3px 14px #16385c12; margin-bottom:18px; }
+    .hero h2 { margin-top:0; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:14px; }
+    .card { background:white; border-radius:12px; padding:16px; box-shadow:0 3px 14px #16385c12; }
+    .card h3 { margin:0 0 12px; color:var(--navy); }
+    .item { display:block; padding:11px 0; border-bottom:1px solid #e8edf3; color:#155ca0; text-decoration:none; }
+    .item:last-child { border-bottom:0; }
+    .item:hover { text-decoration:underline; }
+    .tag { display:inline-block; font-size:12px; background:#e7f3ff; color:#135b91; padding:3px 7px; border-radius:20px; margin-left:5px; }
+    .small { font-size:13px; color:#53657a; line-height:1.6; }
+    footer { margin-top:24px; background:#0c2542; color:white; padding:22px 14px; text-align:center; }
+    footer a { color:#d8eaff; }
+    .empty { display:none; background:white; padding:18px; border-radius:8px; margin-bottom:14px; }
+    @media(max-width:520px) { .search { flex-direction:column; } .search button { width:100%; } }
+  </style>
+</head>
+<body>
+<header>
+  <h1>Apna Sarkari Update</h1>
+  <p>सरकारी नौकरी • रिजल्ट • एडमिट कार्ड • ऑनलाइन फॉर्म</p>
+</header>
+<div class="notice">महत्वपूर्ण: आवेदन करने से पहले संबंधित विभाग की आधिकारिक अधिसूचना जरूर पढ़ें।</div>
+<nav>
+  <a href="#jobs">Latest Jobs</a><a href="#results">Results</a><a href="#admit">Admit Card</a>
+  <a href="#forms">Online Forms</a><a href="#schemes">योजनाएँ</a><a href="#official">Official Links</a>
+</nav>
+<main class="wrap">
+  <div class="search">
+    <input id="searchBox" type="search" placeholder="यहाँ नौकरी, रिजल्ट या योजना खोजें…" aria-label="वेबसाइट पर खोजें">
+    <button onclick="searchItems()">खोजें</button>
+  </div>
+  <div id="noResults" class="empty">इस शब्द से कोई लिंक नहीं मिला। दूसरा शब्द आज़माएँ।</div>
+  <section class="hero">
+    <h2>Apna Sarkari Update पर आपका स्वागत है 👋</h2>
+    <p>यह वेबसाइट सरकारी भर्ती, परीक्षा परिणाम और उपयोगी सरकारी सेवाओं के लिंक एक जगह दिखाने के लिए बनाई गई है। नीचे दिए गए नमूना लिंक प्रकाशित करने से पहले सही आधिकारिक लिंक और नवीनतम जानकारी से बदलें।</p>
+    <p class="small">यह एक स्वतंत्र सूचना वेबसाइट का डेमो है। यह किसी सरकारी विभाग की आधिकारिक वेबसाइट नहीं है।</p>
+  </section>
+  <div class="grid">
+    <section class="card" id="jobs">
+      <h3>📋 Latest Jobs <span class="tag">नौकरी</span></h3>
+      <a class="item" href="https://www.ncs.gov.in/" target="_blank" rel="noopener">National Career Service <span class="tag">Official</span></a>
+      <a class="item" href="https://upsc.gov.in/" target="_blank" rel="noopener">UPSC — भर्ती/नोटिस <span class="tag">Official</span></a>
+      <a class="item" href="https://www.ssc.gov.in/" target="_blank" rel="noopener">SSC — भर्ती/परीक्षा <span class="tag">Official</span></a>
+      <p class="small">नई भर्ती जोड़ते समय पोस्ट, योग्यता, अंतिम तारीख और आधिकारिक नोटिफिकेशन लिंक लिखें।</p>
+    </section>
+    <section class="card" id="results">
+      <h3>📊 Results <span class="tag">रिजल्ट</span></h3>
+      <a class="item" href="https://upsc.gov.in/" target="_blank" rel="noopener">UPSC परिणाम/नोटिस</a>
+      <a class="item" href="https://www.ssc.gov.in/" target="_blank" rel="noopener">SSC परिणाम/नोटिस</a>
+      <a class="item" href="https://nta.ac.in/" target="_blank" rel="noopener">NTA परीक्षा अपडेट</a>
+    </section>
+    <section class="card" id="admit">
+      <h3>🪪 Admit Card <span class="tag">प्रवेश पत्र</span></h3>
+      <a class="item" href="https://www.ssc.gov.in/" target="_blank" rel="noopener">SSC Admit Card / Candidate Login</a>
+      <a class="item" href="https://upsc.gov.in/" target="_blank" rel="noopener">UPSC Exam Updates</a>
+      <a class="item" href="https://nta.ac.in/" target="_blank" rel="noopener">NTA Exam Updates</a>
+    </section>
+    <section class="card" id="forms">
+      <h3>📝 Online Forms <span class="tag">आवेदन</span></h3>
+      <a class="item" href="https://www.ssc.gov.in/" target="_blank" rel="noopener">SSC आवेदन पोर्टल</a>
+      <a class="item" href="https://upsc.gov.in/" target="_blank" rel="noopener">UPSC आवेदन/नोटिस</a>
+      <a class="item" href="https://www.ncs.gov.in/" target="_blank" rel="noopener">रोजगार सेवाएँ</a>
+    </section>
+    <section class="card" id="schemes">
+      <h3>🏛️ सरकारी योजनाएँ</h3>
+      <a class="item" href="https://www.myscheme.gov.in/" target="_blank" rel="noopener">myScheme — योजनाएँ खोजें</a>
+      <a class="item" href="https://www.india.gov.in/" target="_blank" rel="noopener">National Portal of India</a>
+      <a class="item" href="https://services.india.gov.in/" target="_blank" rel="noopener">National Government Services Portal</a>
+    </section>
+    <section class="card" id="mpjobs">
+      <h3>📍 मध्य प्रदेश अपडेट</h3>
+      <a class="item" href="https://esb.mp.gov.in/" target="_blank" rel="noopener">MP कर्मचारी चयन मंडल (ESB)</a>
+      <a class="item" href="https://mppsc.mp.gov.in/" target="_blank" rel="noopener">MP लोक सेवा आयोग (MPPSC)</a>
+      <a class="item" href="https://mp.gov.in/" target="_blank" rel="noopener">मध्य प्रदेश शासन पोर्टल</a>
+      <a class="item" href="https://mponline.gov.in/" target="_blank" rel="noopener">MPOnline सेवाएँ</a>
+      <p class="small">भर्ती, आवेदन और रिजल्ट की तारीखें संबंधित आधिकारिक नोटिस से मिलान करके ही प्रकाशित करें।</p>
+    </section>
+    <section class="card" id="official">
+      <h3>🔗 जरूरी आधिकारिक लिंक</h3>
+      <a class="item" href="https://www.india.gov.in/" target="_blank" rel="noopener">भारत सरकार पोर्टल</a>
+      <a class="item" href="https://www.ncs.gov.in/" target="_blank" rel="noopener">National Career Service</a>
+      <a class="item" href="https://www.myscheme.gov.in/" target="_blank" rel="noopener">myScheme</a>
+    </section>
+  </div>
+<section class="hero" style="margin-top:18px" id="about">
+    <h2>हमारे बारे में / Contact</h2>
+    <p>Apna Sarkari Update एक स्वतंत्र सूचना पोर्टल है। आधिकारिक भर्ती और योजनाओं की पुष्टि संबंधित विभाग की वेबसाइट से करें।</p>
+    <p class="small">अपना संपर्क ईमेल यहाँ जोड़ें: your-email@example.com (प्रकाशित करने से पहले इसे अपने सही ईमेल से बदलें)।</p>
+  </section>
+</main>
+<footer>
+  <p>© <span id="year"></span> Apna Sarkari Update</p>
+  <p><a href="#about">Disclaimer</a> · <a href="#official">Official Links</a></p>
+  <p class="small" style="color:#d5dfeb">यह वेबसाइट किसी सरकारी विभाग से संबद्ध नहीं है। जानकारी और लिंक की पुष्टि संबंधित आधिकारिक स्रोत से करें।</p>
+</footer>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  function searchItems() {
+    const q = document.getElementById('searchBox').value.trim().toLowerCase();
+    const items = [...document.querySelectorAll('.card')];
+    let count = 0;
+    items.forEach(card => {
+      const match = !q || card.innerText.toLowerCase().includes(q);
+      card.style.display = match ? '' : 'none';
+      if (match) count++;
+    });
+    document.getElementById('noResults').style.display = count ? 'none' : 'block';
+  }
+  document.getElementById('searchBox').addEventListener('keydown', e => {
+    if (e.key === 'Enter') searchItems();
+  });
+</script>
+</body>
+</html>
